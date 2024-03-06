@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    {% if match_results[-1] %}
+        {% set match_information = match_results[-1] %}
+        {% set regex_expression = match_results[0] %}
+        {% set input_text = match_results[1] %}
+        {% if match_information[0] == 'No Matches Found' %}
+            <p>No matches found.</p>
+        {% else %}
+            <ol>
+                <h2>Regular Expression</h2><p>{{ regex_expression }}</p> <br>
+                <h2>Input Text</h2><p>{{ input_text }}</p>
+                <h2>Match Information</h2>
+                {% for result in match_information %}
+                    <li class="match-item">
+                        {{ result }}
+                    </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    {% endif %}
+    <div class="form-back-button">
+        <form action="/" method="get">
+            <button class="back-button" type="submit">Back</button>
+        </form>
+    </div>
+</body>
+</html>

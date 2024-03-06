@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Detective</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="form-container">
+        <form action="/" method="post">
+            <h1>Regex Detective</h1>
+            <div class="input-field">
+                <label for="regex">Enter Regular Expression</label>
+                <input type="text" name="regex" id="regex" required>
+            </div>
+            <div class="input-field">
+                <label for="text">Enter the Text</label>
+                <textarea name="text" id="text" cols="30" rows="10" required></textarea>
+            </div>
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+        <form action="/" method="post">
+            <h1>Email Detective</h1>
+            <div class="input-field">
+                <label for="email_id">Enter Email</label>
+                <input type="text" name="email_id" id="email_id" required>
+            </div>
+            <button class="email-submit-button" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
